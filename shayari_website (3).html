@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shayari World</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .shayari {
+            background-color: white;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .shayari p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Shayari World</h1>
+    <p>मज़ेदार और दिल छू जाने वाली शायरी</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Love Shayari</a>
+    <a href="#">Funny Shayari</a>
+    <a href="#">Sad Shayari</a>
+</nav>
+
+<div class="shayari">
+    <p>
+        दिल पे ना ले यार, ये तो बस मज़ाक था,<br>
+        तेरी शकल देखकर ही हंसी का धमाका था!
+    </p>
+    <button class="copy-btn" onclick="copyShayari(this)">Copy</button>
+</div>
+
+<div class="shayari">
+    <p>
+        मोहब्बत करने चला था मैं चाय से,<br>
+        पर वो तो अदरक डाल के बेवफा निकली!
+    </p>
+    <button class="copy-btn" onclick="copyShayari(this)">Copy</button>
+</div>
+
+<footer>
+    &copy; 2025 Shayari World. All rights reserved.
+</footer>
+
+<script>
+    function copyShayari(button) {
+        const shayariText = button.previousElementSibling.innerText;
+        navigator.clipboard.writeText(shayariText).then(() => {
+            button.innerText = 'Copied!';
+            setTimeout(() => button.innerText = 'Copy', 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
